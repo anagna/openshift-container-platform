@@ -8,7 +8,7 @@
 				"description": "Base URL for Template Files",
 				"artifactsBaseUrl": ""
 			},
-			"defaultValue": "https://raw.githubusercontent.com/Microsoft/openshift-container-platform/release-3.6"
+			"defaultValue": "https://raw.githubusercontent.com/anagna/openshift-container-platform/release-3.6"
 		},
 		"customVhdOrGallery": {
 			"type": "string",
@@ -108,7 +108,7 @@
 		},
 		"openshiftClusterPrefix": {
 			"type": "string",
-			"defaultValue": "mycluster",
+			"defaultValue": "oss",
 			"minLength": 1,
 			"maxLength": 20,
 			"metadata": {
@@ -236,6 +236,7 @@
 		},
 		"keyVaultResourceGroup": {
 			"type": "string",
+			"defaultValue": "ossdemo",			
 			"minLength": 1,
 			"metadata": {
 				"description": "Resource Group that contains the Key Vault"
@@ -257,7 +258,7 @@
 		},
 		"enableAzure": {
 			"type": "string",
-			"defaultValue": "false",
+			"defaultValue": "true",
 			"allowedValues": [
 				"true", "false"
 			],
