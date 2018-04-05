@@ -652,13 +652,13 @@ then
  	sleep 30	 
  	runuser -l $SUDOUSER -c  "oc label nodes --all logging-infra-fluentd=true logging=true"
 
- 	runuser -l $SUDOUSER -c  "ansible all -b  -m service -a 'name=openvswitch state=restarted' " 
+ 	runuser -l $SUDOUSER -c  "ansible all -b  -m service -a 'name=openvswitch state=restarted sleep=20' " 
 
  	echo $(date) "- Restart openshift-node service" 
 	echo $(date) "- Sleep for 60" 
 	
  	sleep 60 
- 	runuser -l $SUDOUSER -c  "ansible nodes -b  -m service -a 'name=atomic-openshift-node state=restarted' " 
+ 	runuser -l $SUDOUSER -c  "ansible nodes -b  -m service -a 'name=atomic-openshift-node state=restarted sleep=30' " 
 
 fi
 
