@@ -360,7 +360,7 @@
 			"app": "OpenShift",
 			"provider": "9d2c71fc-96ba-4b4a-93b3-14def5bc96fc"
 		},
-		"bastionVmSize": "Standard_DS2_v2",
+		"bastionVmSize": "B1MS",
 		"imageReference": "[variables('osType')]",
 		"singlequote": "'",
 		"customImageName": "[concat(parameters('customStorageAccount'), parameters('customOsDiskName'))]",
@@ -375,6 +375,10 @@
 		"basicDeploymentTemplateUrl": "[concat(parameters('_artifactsLocation'), '/nested/', parameters('customVhdOrGallery'), 'basic.json')]",
 		"openshiftDeploymentTemplateUrl": "[concat(parameters('_artifactsLocation'), '/nested/openshiftdeploy.json')]",
 		"vmSizesMap": {
+			"B1MS": {
+				"storageAccountType": "Premium_LRS",
+				"storageAccountTier": "Premium"
+			},			
 			"Standard_A4": {
 				"storageAccountType": "Standard_LRS",
 				"storageAccountTier": "Standard"
